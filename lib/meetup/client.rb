@@ -1,7 +1,7 @@
-require "meetup/client/version"
+require 'pry'
 
 module Meetup
-  module Client
-    # Your code goes here...
+  class Client
+    BASE_URL = 'http://api.meetup.com/'.freeze
   end
 end
