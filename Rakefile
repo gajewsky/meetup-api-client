@@ -11,6 +11,7 @@ task default: :spec
 PolishGeeks::DevTools.setup do |config|
   config.brakeman = false
   config.haml_lint = false
+  config.simplecov = false
 end
 
 desc 'Self check using strike-dev-tools'

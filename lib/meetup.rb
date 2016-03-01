@@ -9,5 +9,11 @@ module Meetup
     def configure(&_block)
       yield @config ||= ::Meetup::Configuration.new
     end
+
+    # Alias for Meetup::Client.new
+    # @return [Meetup::Client]
+    def client
+      Meetup::Client.new
+    end
   end
 end
