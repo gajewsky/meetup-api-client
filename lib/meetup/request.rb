@@ -4,9 +4,12 @@ require 'meetup/api_callers/http_requester'
 module Meetup
   # Defines HTTP request methods
   module Request
+    # Base Url for accessing meetup api
     BASE_URL = 'http://api.meetup.com/'.freeze
 
-    # Perform an HTTP GET request
+    # Performs an HTTP GET request
+    # @param path [String] request path
+    # @param params [Hash] Hash with HTTP parameters
     def get(path, params = {})
       json_request = ApiCallers::JsonRequest.new(remote_url(path, params))
       requester = ApiCallers::HttpRequester.new(json_request)
@@ -15,11 +18,17 @@ module Meetup
 
     private
 
-    # Prepare remote url
+    # Prepares remote url
+    # @param path [String] request path
+    # @param params [Hash] Hash with HTTP parameters
+    # @return [String] prepared url
     def remote_url(path, params)
       "#{BASE_URL}#{path}?#{query_string(params)}"
     end
 
+    # Prepares params query
+    # @param params [Hash] Hash with HTTP parameters
+    # @return [String] prepared params query
     def query_string(params)
       params
         .merge(key: ::Meetup.config.api_key)
