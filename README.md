@@ -1,6 +1,7 @@
 # Meetup Client Ruby Gem
 
 [![Code Climate](https://codeclimate.com/github/gajewsky/meetup-api-client/badges/gpa.svg)](https://codeclimate.com/github/gajewsky/meetup-api-client)
+[![Build Status](https://travis-ci.org/gajewsky/meetup-api-client.svg?branch=master)](https://travis-ci.org/gajewsky/meetup-api-client)
 
 A Ruby wrapper for the http://www.meetup.com/meetup_api/ .
 
