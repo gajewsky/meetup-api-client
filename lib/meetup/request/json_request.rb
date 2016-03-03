@@ -1,5 +1,6 @@
 require 'meetup/request/http_request'
 require 'json'
+require 'pry'
 
 module Meetup
   # Module encapsulating api calling specific logic

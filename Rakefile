@@ -11,7 +11,7 @@ task default: :spec
 PolishGeeks::DevTools.setup do |config|
   config.brakeman = false
   config.haml_lint = false
-  config.simplecov_threshold = 98
+  config.simplecov_threshold = 100
 end
 
 desc 'Self check using strike-dev-tools'
