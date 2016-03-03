@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Meetup::Client do
+describe MeetupWrapper do
 end

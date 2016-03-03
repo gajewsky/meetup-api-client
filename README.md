@@ -1,4 +1,4 @@
-# Meetup Client Ruby Gem
+# Meetup Wrapper Ruby Gem
 
 [![Code Climate](https://codeclimate.com/github/gajewsky/meetup-api-client/badges/gpa.svg)](https://codeclimate.com/github/gajewsky/meetup-api-client)
 [![Build Status](https://travis-ci.org/gajewsky/meetup-api-client.svg?branch=master)](https://travis-ci.org/gajewsky/meetup-api-client)
@@ -10,7 +10,7 @@ A Ruby wrapper for the http://www.meetup.com/meetup_api/ .
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'meetup'
+gem 'meetup_wrapper'
 ```
 
 And then execute:
@@ -19,13 +19,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install meetup
+    $ gem install meetup_wrapper
 
 ## Setup
-Create a new file config/initializers/meetup.rb, and put the following content in it:
+Create a new file config/initializers/meetup_wraper.rb, and put the following content in it:
 
 ```ruby
-Meetup.configure do |config|
+MeetupWrapper.configure do |config|
   config.api_key = MEETUP_API_KEY
 end
 ```
@@ -35,7 +35,7 @@ end
 **To get information about Krakow-Ruby-Users-Group**
 
 ```ruby
-    client = Meetup.client
+    client = MeetupWrapper.client
     group = client.group('Krakow-Ruby-Users-Group')
 ```
 ## Contributing

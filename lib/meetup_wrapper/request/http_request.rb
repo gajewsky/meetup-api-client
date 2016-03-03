@@ -1,4 +1,4 @@
-module Meetup
+module MeetupWrapper
   # Module encapsulating api calling specific logic
   module Request
     # HTTP request

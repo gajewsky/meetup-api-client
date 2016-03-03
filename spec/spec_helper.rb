@@ -32,4 +32,4 @@ RSpec.configure do |config|
   end
 end
 
-require 'meetup'
+require 'meetup_wrapper'

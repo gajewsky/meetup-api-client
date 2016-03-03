@@ -1,8 +1,8 @@
-require 'meetup/request/http_request'
+require 'meetup_wrapper/request/http_request'
 require 'json'
 require 'pry'
 
-module Meetup
+module MeetupWrapper
   # Module encapsulating api calling specific logic
   module Request
     # JSON request

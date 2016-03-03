@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe ::Meetup::Request::JsonRequest do
-  subject { ::Meetup::Request::JsonRequest.new(response_body) }
+describe ::MeetupWrapper::Request::JsonRequest do
+  subject { ::MeetupWrapper::Request::JsonRequest.new(response_body) }
   let(:response_body) do
     { 'response' => 'hello' }.to_json
   end

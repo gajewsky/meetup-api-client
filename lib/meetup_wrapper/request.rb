@@ -1,7 +1,7 @@
-require 'meetup/request/json_request'
-require 'meetup/request/http_requester'
+require 'meetup_wrapper/request/json_request'
+require 'meetup_wrapper/request/http_requester'
 
-module Meetup
+module MeetupWrapper
   # Defines HTTP request methods
   module Request
     # Base Url for accessing meetup api
@@ -31,7 +31,7 @@ module Meetup
     # @return [String] prepared params query
     def query_string(params)
       params
-        .merge(key: ::Meetup.config.api_key)
+        .merge(key: ::MeetupWrapper.config.api_key)
         .map { |k, v| "#{k}=#{v}" }
         .join('&')
     end

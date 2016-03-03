@@ -1,6 +1,6 @@
 require 'net/http'
 
-module Meetup
+module MeetupWrapper
   # Module encapsulating api calling specific logics
   module Request
     # HTTP requester

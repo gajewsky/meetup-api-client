@@ -1,6 +1,6 @@
 require File.expand_path('../request', __FILE__)
 
-module Meetup
+module MeetupWrapper
   # Wrapper for the Meetup REST API
   class Client
     include Request

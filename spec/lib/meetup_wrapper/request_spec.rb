@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Meetup::Request do
-  subject { Meetup.client }
+describe MeetupWrapper::Request do
+  subject { MeetupWrapper.client }
   let(:api_key) { Faker::Lorem.word }
   let(:query_string) { "category=1&status=upcoming&time=0,1m&key=#{api_key}" }
   let(:path) { 'test-path' }
@@ -13,10 +13,10 @@ describe Meetup::Request do
     }
   end
 
-  before { Meetup.configure { |config| config.api_key = api_key } }
+  before { MeetupWrapper.configure { |config| config.api_key = api_key } }
 
   it 'has set a BASE_URL' do
-    expect(Meetup::Request::BASE_URL).not_to be nil
+    expect(MeetupWrapper::Request::BASE_URL).not_to be nil
   end
 
   describe '#remote_url' do
@@ -30,7 +30,7 @@ describe Meetup::Request do
     it 'returns a valid remote url' do
       expect(
         subject.send(:remote_url, path, params)
-      ).to eq "#{Meetup::Request::BASE_URL}#{path}?#{query_string}"
+      ).to eq "#{MeetupWrapper::Request::BASE_URL}#{path}?#{query_string}"
     end
   end
 

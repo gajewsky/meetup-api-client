@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'net/http'
 
-describe ::Meetup::Request::HttpRequest do
-  subject { ::Meetup::Request::HttpRequest.new('some_uri', http_verb) }
+describe ::MeetupWrapper::Request::HttpRequest do
+  subject { ::MeetupWrapper::Request::HttpRequest.new('some_uri', http_verb) }
   let(:http_verb) { 'get' }
 
   describe '#make_request' do
