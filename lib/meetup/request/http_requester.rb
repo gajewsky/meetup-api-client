@@ -2,7 +2,7 @@ require 'net/http'
 
 module Meetup
   # Module encapsulating api calling specific logics
-  module ApiCallers
+  module Request
     # HTTP requester
     class HttpRequester
       def initialize(requester)

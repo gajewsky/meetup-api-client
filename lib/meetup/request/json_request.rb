@@ -1,9 +1,9 @@
-require 'meetup/api_callers/http_request'
+require 'meetup/request/http_request'
 require 'json'
 
 module Meetup
   # Module encapsulating api calling specific logic
-  module ApiCallers
+  module Request
     # JSON request
     class JsonRequest < HttpRequest
       # Parse response

@@ -1,6 +1,6 @@
 module Meetup
   # Module encapsulating api calling specific logic
-  module ApiCallers
+  module Request
     # HTTP request
     class HttpRequest
       # Default charset

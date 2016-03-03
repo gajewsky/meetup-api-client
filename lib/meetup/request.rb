@@ -1,5 +1,5 @@
-require 'meetup/api_callers/json_request'
-require 'meetup/api_callers/http_requester'
+require 'meetup/request/json_request'
+require 'meetup/request/http_requester'
 
 module Meetup
   # Defines HTTP request methods
@@ -11,8 +11,8 @@ module Meetup
     # @param path [String] request path
     # @param params [Hash] Hash with HTTP parameters
     def get(path, params = {})
-      json_request = ApiCallers::JsonRequest.new(remote_url(path, params))
-      requester = ApiCallers::HttpRequester.new(json_request)
+      json_request = JsonRequest.new(remote_url(path, params))
+      requester = HttpRequester.new(json_request)
       requester.execute_request
     end
 
