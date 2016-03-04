@@ -17,7 +17,15 @@ module MeetupWrapper
         uri = URI.parse(@in_uri)
         http = Net::HTTP.new(uri.host, uri.port)
         response = http.request(class_to_call.new(uri.request_uri, headers))
-        response.body
+        format_response(response.body)
+      end
+
+      # Formats response
+      # @param response_body [String] JSON response from api
+      # @return [String] JSON response from api
+      # @note this method is overiddern in class descendants
+      def format_response(response_body)
+        response_body
       end
 
       private

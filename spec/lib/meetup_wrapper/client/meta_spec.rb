@@ -4,6 +4,7 @@ describe MeetupWrapper::Client do
   subject { MeetupWrapper.client }
   let(:api_key) { Faker::Lorem.word }
   let(:response) { '{"status":"ok" }' }
+  let(:epected_response) { { 'status' => 'ok' } }
 
   before { MeetupWrapper.configure { |config| config.api_key = api_key } }
 
@@ -14,7 +15,7 @@ describe MeetupWrapper::Client do
     end
 
     it 'returns status information' do
-      expect(subject.status).to eq response
+      expect(subject.status).to eq epected_response
     end
   end
 end
