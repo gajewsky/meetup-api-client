@@ -9,5 +9,6 @@ module MeetupWrapper
     Dir[base_path].each { |file| require file }
 
     include Groups
+    include Meta
   end
 end

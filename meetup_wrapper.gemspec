@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'meetup_wrapper/version'
 
 Gem::Specification.new do |s|
-  s.name          = "meetup-wrapper"
+  s.name          = "meetup_wrapper"
   s.version       = MeetupWrapper::VERSION
   s.platform      = Gem::Platform::RUBY
   s.authors       = %w( "Marcin Gajewski" )

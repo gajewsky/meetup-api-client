@@ -3,12 +3,12 @@ require 'spec_helper'
 describe MeetupWrapper::Client do
   subject { MeetupWrapper.client }
   let(:api_key) { Faker::Lorem.word }
-  let(:test_group) { 'group-name' }
-  let(:response) { '{"id":6594592,"name":"group-name","link":"http://www.meetup.com/group-name/"' }
+  let(:test_group) { 'group' }
+  let(:response) { '{"id":6594592,"name":"group","link":"http://www.meetup.com/group/"}' }
 
   before { MeetupWrapper.configure { |config| config.api_key = api_key } }
 
-  describe '.group' do
+  describe '#group' do
     before do
       stub_request(:get, "api.meetup.com/#{test_group}?key=#{api_key}")
         .to_return(body: response, status: 200, headers: {})
