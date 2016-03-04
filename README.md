@@ -5,6 +5,8 @@
 
 A Ruby wrapper for the http://www.meetup.com/meetup_api/ .
 
+## Gem currently is beeing developed. For now 5% of Meetup V3 endpoints is covered.
+
 ## Installation
 
 Add this line to your application's Gemfile:
