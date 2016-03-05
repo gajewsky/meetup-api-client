@@ -44,9 +44,26 @@ describe MeetupWrapper::Client do
         .to_return(body: response, status: 200, headers: {})
     end
 
-    it 'returns similar groups list' do
+    it 'returns recommended groups list' do
       expect(
         subject.recommended_groups
+      ).to eq exp_result
+    end
+  end
+
+  describe '#find_groups' do
+    let(:options) { { country: 'poland', location: 'krakow' } }
+    let(:text) { 'ruby' }
+    let(:query) { '&country=poland&location=krakow&text=ruby' }
+
+    before do
+      stub_request(:get, "#{base_url}find/groups?key=#{api_key}#{query}")
+        .to_return(body: response, status: 200, headers: {})
+    end
+
+    it 'returns found group list' do
+      expect(
+        subject.find_groups(text, options)
       ).to eq exp_result
     end
   end

@@ -22,7 +22,7 @@ module MeetupWrapper
       # @return [Hashie::Mash] The response includes a list of similar groups
       # @example Return information for the Meetup group
       #   client.similar_groups('Krakow-Ruby-Users-Group')
-      #     =>  "[{\"id\":17716742,\"name\":\"Cracow R User Group "...}
+      #     =>  [#<Hashie::Mash>]
       # @see http://www.meetup.com/meetup_api/docs/:urlname/similar_groups/
       def similar_groups(urlname, options = {})
         get("#{urlname}/similar_groups", options)
@@ -33,10 +33,21 @@ module MeetupWrapper
       # @return [Hashie::Mash] The response includes a list of similar groups
       # @example Return information for the Meetup group
       #   client.recommended_groups
-      #     =>  "[{\"id\":17716742,\"name\":\"Cracow R User Group "...}
+      #     =>  [#<Hashie::Mash>]
       # @see http://www.meetup.com/meetup_api/docs/recommended/groups/
       def recommended_groups(options = {})
         get('recommended/groups', options)
+      end
+
+      # Returns text, location, category and friend-based group searches
+      # @param options [Hash] options hash
+      # @return [Hashie::Mash] The response includes a list of similar groups
+      # @example Return information for the Meetup group
+      #   client.find_groups('ruby')
+      #     =>  [#<Hashie::Mash>]
+      # @see http://www.meetup.com/meetup_api/docs/find/groups/
+      def find_groups(text, options = {})
+        get('find/groups', options.merge(text: text))
       end
     end
   end

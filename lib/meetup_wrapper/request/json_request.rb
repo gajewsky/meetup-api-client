@@ -14,7 +14,8 @@ module MeetupWrapper
       def format_response(response_body)
         json_array = [JSON.parse(response_body)]
         parsed_body = json_array.flatten.map { |hash| Hashie::Mash.new(hash) }
-        parsed_body.size > 1 ? parsed_body : parsed_body.first
+        # if array contain only one element then return it
+        parsed_body.size == 1 ? parsed_body.first : parsed_body
       end
     end
   end
