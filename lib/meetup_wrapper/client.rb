@@ -8,6 +8,7 @@ module MeetupWrapper
     base_path = File.dirname(__FILE__) + '/client/*.rb'
     Dir[base_path].each { |file| require file }
 
+    include Events
     include Groups
     include Meta
   end
