@@ -37,4 +37,17 @@ describe MeetupWrapper::Client do
       ).to eq exp_result
     end
   end
+
+  describe '#recommended_groups' do
+    before do
+      stub_request(:get, "#{base_url}recommended/groups?key=#{api_key}")
+        .to_return(body: response, status: 200, headers: {})
+    end
+
+    it 'returns similar groups list' do
+      expect(
+        subject.recommended_groups
+      ).to eq exp_result
+    end
+  end
 end
