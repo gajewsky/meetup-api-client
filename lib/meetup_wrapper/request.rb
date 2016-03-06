@@ -32,7 +32,7 @@ module MeetupWrapper
     def query_string(params)
       params
         .merge(key: ::MeetupWrapper.config.api_key)
-        .map { |k, v| "#{k}=#{v}" }
+        .map { |key, value| "#{key}=#{value}" }
         .join('&')
     end
   end

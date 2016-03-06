@@ -11,5 +11,6 @@ module MeetupWrapper
     include Events
     include Groups
     include Meta
+    include Photos
   end
 end
