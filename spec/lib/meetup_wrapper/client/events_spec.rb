@@ -38,4 +38,19 @@ describe MeetupWrapper::Client do
       end
     end
   end
+
+  describe '#group_event' do
+    let(:event_id) { '359651' }
+
+    before do
+      stub_request(:get, "#{base_url}#{test_group}/events/#{event_id}?key=#{api_key}")
+        .to_return(body: response, status: 200, headers: {})
+    end
+
+    it 'returns event' do
+      expect(
+        subject.group_event(test_group, event_id)
+      ).to eq exp_result
+    end
+  end
 end
